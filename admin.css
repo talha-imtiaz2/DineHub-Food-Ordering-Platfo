@@ -1,0 +1,28 @@
+.admin-login {
+  background-color: #f8f9fa;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.admin-login .card {
+  border: none;
+  border-radius: 10px;
+}
+
+.admin-login .card-body {
+  padding: 2rem;
+}
+
+/* Add your admin dashboard styles here */
+.dashboard-header {
+  background-color: #dc3545;
+  color: white;
+  padding: 20px 0;
+  margin-bottom: 30px;
+  border-radius: 5px;
+}
+
+.status-badge {
+  font-size: 0.8rem;
+}
