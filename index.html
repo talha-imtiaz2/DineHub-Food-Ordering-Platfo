@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DineHub - Restaurant</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-danger" href="#">
+        <img src="/full stack/public/logo.jpg" alt="Logo" width="40" class="me-2"> DineHub
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto gap-3">
+  <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+  <li class="nav-item"><a class="nav-link" href="#menu-section">Menu</a></li>
+  <li class="nav-item"><a class="nav-link" href="/full stack/public/buffet.html">Hi-tea Buffet</a></li>
+  <li class="nav-item"><a class="nav-link" href="#reservation-form">Reservation</a></li>
+  <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+ <li class="nav-item">
+  <a class="nav-link" href="/frontend/Admin/admin-login.html">Admin</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link position-relative" href="cart.html">
+    <i class="fas fa-shopping-cart"></i>
+    <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+  </a>
+</li>
+</ul>
+      </div>
+    </div>
+  </nav>
+
+
+ <!-- Hero Carousel -->
+<div class="position-relative">
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div style="min-height: 500px; background: url('/full stack/public/slide1.jpg') center/cover no-repeat;"></div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div style="min-height: 500px; background: url('/full stack/public/slide2.jpg') center/cover no-repeat;"></div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <div style="min-height: 500px; background: url('/full stack/public/slide3.jpg') center/cover no-repeat;"></div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+    </div>
+  </div>
+
+  <!-- Static Overlay Text & Buttons -->
+  <div class="position-absolute top-50 start-0 translate-middle-y ps-5 text-white" style="z-index: 10;">
+    <h1 class="fw-bold mb-4">Dine in Style<br>Savor Every Flavor<br>Celebrate Every Moment</h1>
+    <a href="#reservation-form" class="btn btn-danger btn-lg me-3">Reserve Table</a>
+    <a href="explore-menu.html" class="btn btn-danger btn-lg">Explore Menu</a>
+  </div>
+</div>
+
+
+  <!-- Marquee -->
+  <div class="bg-warning py-2">
+    <marquee><strong>Special Offer:</strong> Try our mango dessert! &nbsp; | &nbsp; <strong>Opening Hours:</strong> Mon-Sun: 12:00 PM - 11:00 PM</marquee>
+  </div>
+
+  <!-- Introduction Section -->
+  <section class="container my-5">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h1>Our Journey</h1>
+        <p>Welcome to DineHub – the hub of culinary excellence. Explore a wide variety of flavorful dishes crafted with the freshest ingredients.</p>
+        <p> DineHub promises a journey of taste and refinement. It's not just a meal — it's a sensory experience tailored for those who appreciate the finest in hospitality. Discover luxury dining, where every visit is an occasion.</p>
+        <p> Every detail — from ambient lighting and custom furnishings to curated background music — is designed to elevate the guest experience. Our premium service model ensures personalized attention, while our kitchen operates under the highest standards of hygiene and culinary craftsmanship. </p>
+        <p>Our expert chefs ensure hygiene, quality, and delightful presentation in every order.</p>
+        <p>Let your taste buds embark on an unforgettable journey with our seasonal menus and signature dishes.</p>
+        <p>We care about your experience – whether dining in or ordering online, we've got you covered!</p>
+      </div>
+      <div class="col-md-6">
+        <img src="/full stack/public/interioe2.jpg" class="img-fluid rounded shadow" alt="Restaurant Interior">
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Menu -->
+<section class="container mb-5" id="menu-section">
+  <h2 class="mb-3">Popular Menu</h2>
+  <input type="text" id="menuSearch" class="form-control mb-4" placeholder="Search menu items...">
+  <div class="row" id="menuItems">
+    <div class="col-md-6 mb-4 menu-item">
+      <div class="card h-100">
+        <img src="/full stack/public/biryani.webp" class="card-img-top" alt="Biryani">
+        <div class="card-body">
+          <h5 class="card-title">Chicken Biryani - Rs. 450</h5>
+          <p class="card-text">Aromatic basmati rice with tender chicken and spices.</p>
+          <button class="btn btn-danger btn-sm order-btn">Order Now</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4 menu-item">
+      <div class="card h-100">
+        <img src="/full stack/public/karahi.jpg" class="card-img-top" alt="Karahi">
+        <div class="card-body">
+          <h5 class="card-title">Chicken Karahi - Rs. 650</h5>
+          <p class="card-text">Rich tomato-based gravy with tender chicken chunks.</p>
+          <button class="btn btn-danger btn-sm order-btn">Order Now</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4 menu-item">
+      <div class="card h-100">
+        <img src="/full stack/public/burgerking2.jpg" class="card-img-top" alt="Burger">
+        <div class="card-body">
+          <h5 class="card-title">Zinger Burger - Rs. 350</h5>
+          <p class="card-text">Crispy chicken fillet with lettuce and mayo in a fresh bun.</p>
+          <button class="btn btn-danger btn-sm order-btn">Order Now</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4 menu-item">
+      <div class="card h-100">
+        <img src="/full stack/public/pasta.jpg" class="card-img-top" alt="Pasta">
+        <div class="card-body">
+          <h5 class="card-title">Creamy Alfredo Pasta - Rs. 500</h5>
+          <p class="card-text">Smooth creamy sauce with fettuccine and grilled chicken.</p>
+          <button class="btn btn-danger btn-sm order-btn">Order Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Order Modal -->
+<div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="orderModalLabel">Place Your Order</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="orderForm">
+          <div class="mb-3">
+            <label for="customerName" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="customerName" required>
+          </div>
+          <div class="mb-3">
+            <label for="customerAddress" class="form-label">Address</label>
+            <input type="text" class="form-control" id="customerAddress" required>
+          </div>
+          <div class="mb-3">
+            <label for="customerInstructions" class="form-label">Special Instructions</label>
+            <textarea class="form-control" id="customerInstructions" rows="3"></textarea>
+          </div>
+          <input type="hidden" id="selectedItem" name="item">
+          <button type="submit" class="btn btn-danger">Place Order</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Reservation Form -->
+<section class="container mb-5" id="reservation-form">
+  <h2 class="mb-3">Make a Reservation</h2>
+  <form id="reservationForm">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="name" class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="name" required>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="guests" class="form-label">Number of Guests</label>
+        <select class="form-select" id="guests" required>
+          <option value="1">1 Person</option>
+          <option value="2">2 People</option>
+          <option value="3">3 People</option>
+          <option value="4">4 People</option>
+          <option value="5">5 People</option>
+          <option value="6">6+ People</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="date" class="form-label">Date</label>
+        <input type="date" class="form-control" id="date" required>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="time" class="form-label">Time</label>
+        <input type="time" class="form-control" id="time" required>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="message" class="form-label">Special Requests</label>
+      <textarea class="form-control" id="message" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-danger">Book Table</button>
+  </form>
+</section>
+
+<!-- Feedback Section -->
+<section class="mb-5" id="feedback">
+  <h2 class="mb-3">Customer Feedback</h2>
+  <form id="feedbackForm">
+    <div class="mb-3">
+      <label class="form-label">Rate Your Experience:</label>
+      <div class="star-rating">
+        <input type="radio" name="rating" id="star5" value="5"><label for="star5">&#9733;</label>
+        <input type="radio" name="rating" id="star4" value="4"><label for="star4">&#9733;</label>
+        <input type="radio" name="rating" id="star3" value="3"><label for="star3">&#9733;</label>
+        <input type="radio" name="rating" id="star2" value="2"><label for="star2">&#9733;</label>
+        <input type="radio" name="rating" id="star1" value="1"><label for="star1">&#9733;</label>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="comment" class="form-label">Your Comment</label>
+      <textarea class="form-control" id="comment" rows="3" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-danger">Submit Feedback</button>
+  </form>
+</section>
+
+<!-- Contact Us Section -->
+<section class="mb-5" id="contact">
+  <h2 class="mb-3">Contact Us</h2>
+  <p><strong>Phone:</strong> +92 300 1234567, +92 345 9876543</p>
+  <p><strong>Email:</strong> info@dinehub.com</p>
+  <div class="d-flex gap-3">
+    <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
+    <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
+    <a href="#"><i class="fab fa-facebook-messenger fa-lg"></i></a>
+  </div>
+</section>
+
+<style>
+  .star-rating {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    display: inline-flex;
+    gap: 0.3em;
+  }
+  .star-rating input[type="radio"] {
+    display: none;
+  }
+  .star-rating label {
+    font-size: 2em;
+    color: lightgray;
+    cursor: pointer;
+  }
+  .star-rating input[type="radio"]:checked ~ label {
+    color: gold;
+  }
+</style>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Initialize Bootstrap tooltips
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+  });
+
+  // Menu search functionality
+  document.getElementById('menuSearch').addEventListener('input', function() {
+    const searchTerm = this.value.toLowerCase();
+    const menuItems = document.querySelectorAll('.menu-item');
+    
+    menuItems.forEach(item => {
+      const title = item.querySelector('.card-title').textContent.toLowerCase();
+      const text = item.querySelector('.card-text').textContent.toLowerCase();
+      
+      if (title.includes(searchTerm)) {
+        item.style.display = 'block';
+      } else if (text.includes(searchTerm)) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+
+  // Order button functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const orderButtons = document.querySelectorAll('.order-btn');
+    const orderModal = new bootstrap.Modal(document.getElementById('orderModal'));
+    
+    orderButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const card = this.closest('.card');
+        const itemName = card.querySelector('.card-title').textContent;
+        document.getElementById('selectedItem').value = itemName;
+        orderModal.show();
+      });
+    });
+  });
+
+  // Order form submission
+  // Order form submission
+document.getElementById('orderForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const name = document.getElementById('customerName').value;
+    const address = document.getElementById('customerAddress').value;
+    const instructions = document.getElementById('customerInstructions').value;
+    const item = document.getElementById('selectedItem').value;
+    
+    try {
+        // Get existing cart items from localStorage or initialize empty array
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        
+        // Extract item name and price (assuming format "Item Name - Rs. XXX")
+        const itemParts = item.split(' - Rs. ');
+        const itemName = itemParts[0];
+        const itemPrice = parseInt(itemParts[1]);
+        
+        // Add new item to cart
+        cartItems.push({
+            name: itemName,
+            price: itemPrice,
+            quantity: 1,
+            instructions: instructions
+        });
+        
+        // Save back to localStorage
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        
+        // Update cart count
+        const cartCount = document.getElementById('cart-count');
+        cartCount.textContent = cartItems.length;
+        
+        alert(`✅ Order added to cart successfully!`);
+        this.reset();
+        bootstrap.Modal.getInstance(document.getElementById('orderModal')).hide();
+        
+    } catch (error) {
+        console.error('Error adding to cart:', error);
+        alert('❌ Error adding item to cart. Please try again.');
+    }
+});
+  // Reservation form submission
+  document.getElementById('reservationForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const guests = document.getElementById('guests').value;
+    const date = document.getElementById('date').value;
+    const time = document.getElementById('time').value;
+    const message = document.getElementById('message').value;
+    
+    try {
+      const response = await fetch('http://localhost:5000/api/reservations', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, guests, date, time, message })
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert(`✅ Reservation confirmed!\n${result.message}`);
+        this.reset();
+      } else {
+        alert(`❌ Error: ${result.message || 'Failed to submit reservation.'}`);
+      }
+    } catch (error) {
+      console.error('Reservation submission failed:', error);
+      alert('❌ Server error. Try again later.');
+    }
+  });
+
+  // Feedback form submission
+  document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const rating = document.querySelector('input[name="rating"]:checked');
+    const comment = document.getElementById('comment').value;
+    
+    if (!rating) {
+      alert('Please select a rating');
+      return;
+    }
+    
+    alert(`Thank you for your ${rating.value}-star feedback!`);
+    this.reset();
+  });
+</script>
+</body>
+</html>
